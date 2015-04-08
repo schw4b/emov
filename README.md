@@ -2,8 +2,9 @@
 An R package for fixation and saccade detection in eye movement recordings. Eye movements consist of alternating saccades and fixations. This package implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg (2000) and detects fixations in the first place, compared to the velocity threshold algorithms which detect saccades.
 
 ## Manual installaton
-    
-    sudo R CMD INSTALL emov-master.tar.gz
+    unzip emov-master.zip
+    mv emov-master emov
+    R --vanilla CMD INSTALL --build emov
   
 ## Getting started
     
