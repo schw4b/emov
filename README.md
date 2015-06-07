@@ -18,7 +18,7 @@ An R package for fixation and saccade detection in eye movement recordings. Eye 
     library("emov")
     data(fivesec)
 
-### Low pass filtering of the data:
+Low pass filtering of the data:
     fivesec$x = filter(fivesec$x, rep(1/3, 3))
     fivesec$y = filter(fivesec$y, rep(1/3, 3))
 
