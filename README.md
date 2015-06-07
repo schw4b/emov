@@ -13,7 +13,8 @@ An R package for fixation and saccade detection in eye movement recordings. Eye 
     library("emov")
     demo(fivesec, package="emov")
     ?emov.idt
-    ![alt tag](/inst/images/plot.png)
+    
+![alt tag](/inst/images/plot.png)
 
 ## Getting started: An Example
     library("emov")
