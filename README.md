@@ -13,6 +13,7 @@ An R package for fixation and saccade detection in eye movement recordings. Eye 
     library("emov")
     demo(fivesec, package="emov")
     ?emov.idt
+    ![alt tag](/inst/images/plot.png)
 
 ## Getting started: An Example
     library("emov")
@@ -55,5 +56,3 @@ Fixation detection with a dispersion of 2 cm, and a minimal fixation duration of
 Salvucci, D. D., & Goldberg, J. H. (2000). Identifying fixations and saccades in eye-tracking pro-
 tocols. In Proceedings of the 2000 symposium on eye tracking research & applications (pp. 71-78).
 New York: ACM.
-
-![alt tag](/inst/images/plot.png)
