@@ -1,6 +1,6 @@
 # emov
-# Copyright (C) 2010-2012 Simon Schwab,
-# Department of Psychitric Neurophysiology, University of Bern.
+# Copyright (C) 2010-2015 Simon Schwab,
+# University of Bern.
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #' I-DT algorithm.
@@ -30,7 +30,7 @@ emov.idt <- function(t, x, y, dispersion, duration) {
   while (start <= length(x) - duration + 1) { # added + 1
     # while: we move window by 1, if D > threshold
     
-    end <- start + duration - 1 # window end position
+    end <- start + duration # window end position
     # create window        
     x_win <- x[start:end]
     y_win <- y[start:end]
@@ -44,24 +44,24 @@ emov.idt <- function(t, x, y, dispersion, duration) {
       # while: we expand window by 1 using j
       x_win <- x[start:(end + j)]
       y_win <- y[start:(end + j)]
-      D <- (max(x_win, na.rm=T) - min(x_win ,na.rm=T))
-      + (max(y_win ,na.rm=T) - min(y_win, na.rm=T))
+      D <- (max(x_win, na.rm=T) - min(x_win ,na.rm=T)) + 
+        (max(y_win ,na.rm=T) - min(y_win, na.rm=T))
       
       if (D > dispersion) {
         # select window (j - 1) as fixation
         fix_start <- c(fix_start, t[start])
         fix_end <- c(fix_end, t[end + j - 1]) # j - 1 is previous window
-        fix_x <- c(fix_x, mean(x_win, na.rm=T))
-        fix_y <- c(fix_y, mean(y_win, na.rm=T))
-        start <- end + j - 1 # skip window points
-        break # something wroing with -1
+        fix_x <- c(fix_x, mean(x_win[1:(length(x_win) - 1)], na.rm=T))
+        fix_y <- c(fix_y, mean(y_win[1:(length(y_win) - 1)], na.rm=T))
+        start <- end + j # skip window points
+        break
       } else if (end + j == length(x)) {
         # handle last window if data ends during a fixation
         fix_start <- c(fix_start, t[start])
         fix_end <- c(fix_end, t[end])
         fix_x <- c(fix_x, mean(x_win,na.rm=T))
         fix_y <- c(fix_y, mean(y_win,na.rm=T))
-        start <- end + j - 1
+        start <- end + j
         break
       }            
       j <- j + 1
