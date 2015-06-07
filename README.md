@@ -9,8 +9,6 @@ An R package for fixation and saccade detection in eye movement recordings. Eye 
     mv emov-master emov
     R --vanilla CMD INSTALL --build emov
 
-
-
 ## Getting started: Running the Demo
     library("emov")
     demo(fivesec, package="emov")
@@ -20,12 +18,11 @@ An R package for fixation and saccade detection in eye movement recordings. Eye 
     library("emov")
     data(fivesec)
 
-Low pass filtering of the data:
+# Low pass filtering of the data:
     fivesec$x = filter(fivesec$x, rep(1/3, 3))
     fivesec$y = filter(fivesec$y, rep(1/3, 3))
 
-Fixation detection with a dispersion of 2cm, and 20 samples (100 ms, 200 Hz tracker).
-In the sample data, 2 cm corresponds to 1.43 degrees at a viewing distance of 80 cm.
+# Fixation detection with a dispersion of 2cm, and 20 samples (100 ms, 200 Hz tracker). In the sample data, 2 cm corresponds to 1.43 degrees at a viewing distance of 80 cm.
     emov.angdia(2, 80)
     fixations = emov.idt(fivesec$time, fivesec$x, fivesec$y, 2, 20)
 
