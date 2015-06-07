@@ -23,7 +23,7 @@ Low pass filtering of the data:
     fivesec$x = filter(fivesec$x, rep(1/3, 3))
     fivesec$y = filter(fivesec$y, rep(1/3, 3))
 
-Fixation detection with a dispersion of 2 cm, and 20 samples (100 ms, 200 Hz tracker). In the sample data, 2 cm corresponds to 1.43 degrees at a viewing distance of 80 cm.
+Fixation detection with a dispersion of 2 cm, and a minimal fixation duration of 20 samples (corresponds to 100 ms, 200 Hz tracker). In the sample data, 2 cm at a viewing distance of 80 cm corresponds to 1.43 degrees.
 
     emov.angdia(2, 80)
     fixations = emov.idt(fivesec$time, fivesec$x, fivesec$y, 2, 20)
