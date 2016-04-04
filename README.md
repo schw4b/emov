@@ -47,6 +47,13 @@ Fixation detection with a dispersion of 2 cm, and a minimal fixation duration of
     15 4.450 4.600 0.150  18.6530860  -9.983666
     16 4.625 4.875 0.250  24.1802288 -10.188763
 
+## Update package to newest CRAN version
+    packageVersion("emov")
+    detach("package:emov", unload=TRUE)
+    install.packages("emov")
+    library("emov")
+    packageVersion("emov")
+
 ## Unload package
     detach("package:emov", unload=TRUE)
 
