@@ -1,11 +1,11 @@
 Package: emov
-Version: 0.1
-Date: 2015-04-09
+Version: 0.1.1
+Date: 2016-04-04
 Title: Eye Movement Analysis Package for Fixation and Saccade Detection
 Author: Simon Schwab <schw4b@gmail.com>
 Maintainer: Simon Schwab <schw4b@gmail.com>
 Depends: R (>= 1.8.0)
-Description: An R package for fixation and saccade detection in eye movement recordings. Eye movements consist of alternating saccades and fixations. This package implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg (2000) which detects fixation duration and position.
+Description: Fixation and saccade detection in eye movement recordings. This package implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg (2000) which detects fixation duration and position.
 License: GPL-3
 URL: https://github.com/schw4b/emov
 BugReports: https://github.com/schw4b/emov/issues
