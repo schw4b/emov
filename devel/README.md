@@ -21,6 +21,13 @@
 
 ### Configure ssh key authentication
     git remote set-url origin git@github.com:schw4b/mdm.git
+
+### Commit changes
+    git pull
+    git status
+    git add some files
+    git commit -m "Some comment"
+    git pull develop
     
 ### Merge develop to master
     git checkout master
